@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD033 MD041 -->
+
 <div align="center">
 
 # Cloud Computing Laboratory (CSE12045)
