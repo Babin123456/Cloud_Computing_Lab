@@ -1,3 +1,5 @@
+<div align="center">
+
 # Cloud Computing Laboratory (CSE12045)
 
 ![Cloud Computing Lab Header](https://capsule-render.vercel.app/api?type=waving&color=0:090d16,35:0284c7,70:6366f1,100:090d16&height=200&section=header&text=CLOUD%20COMPUTING%20LAB&fontSize=38&fontColor=ffffff&fontAlignY=36&desc=(CSE12045)%20%E2%80%A2%207th%20Semester&descAlignY=58)
@@ -15,7 +17,7 @@
 ## 📌 Student & Academic Details
 
 | Attribute | Details |
-| :--- | :--- |
+| :---: | :---: |
 | 🧑‍🎓 **Student Name** | **Babin Bid** |
 | 🔢 **Roll Number** | `UG/02/BTCSE/2023/114` |
 | 🆔 **Registration Number** | `AU/2023/0009748` |
@@ -29,10 +31,12 @@
 ## 🔬 Laboratory Experiments
 
 | # | Experiment Title | Key Tools | Documentation Report |
-| :-: | :--- | :--- | :-: |
+| :---: | :---: | :---: | :---: |
 | **01** | **Installation of Hypervisors and initiation of VMs with image file.** | VirtualBox, Ubuntu ISO, GCC, Kernel Headers | [Experiment_1.pdf](Experiment_1.pdf) |
 | **02** | **Client–Server Communication Between Two Virtual Machines** | VirtualBox NAT Network, Python TCP Sockets | [Experiment_2.pdf](Experiment_2.pdf) |
 | **03** | **Creation of a Simple Network Topology Using Open-Source Network Virtualization Tools** | Ubuntu VM, Mininet, Open vSwitch | [Experiment_3.pdf](Experiment_3.pdf) |
+
+</div>
 
 ---
 
@@ -86,6 +90,8 @@
 
 ---
 
+<div align="center">
+
 ## 📜 Academic Notice & Coursework Disclaimer
 
 This repository and its contents are developed and maintained by **Babin Bid** (Roll No: `UG/02/BTCSE/2023/114`, Reg No: `AU/2023/0009748`) for academic coursework and laboratory evaluation in the **Cloud Computing Lab (CSE12045)** under the Department of Computer Science & Engineering, School of Engineering & Technology, **ADAMAS University**, supervised by **Prof. Anusuya Bera**.
@@ -94,8 +100,10 @@ The materials, source codes, configuration scripts, and documentation provided h
 
 Licensed under the [MIT License](LICENSE).
 
----
+<br/>
 
 ![Footer Wave Banner](https://capsule-render.vercel.app/api?type=waving&color=0:6366f1,50:0284c7,100:090d16&height=100&section=footer)
 
 *Developed by **Babin Bid** • ADAMAS University*
+
+</div>
