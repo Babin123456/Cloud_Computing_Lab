@@ -160,6 +160,6 @@ The materials, configuration steps, and documentation provided herein are intend
 
 <div align="center">
 
-*Developed by **Babin Bid** • ADAMAS University*
+*Written by **Babin Bid** • ADAMAS University*
 
 </div>
