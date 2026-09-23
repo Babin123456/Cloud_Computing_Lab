@@ -152,7 +152,7 @@ This repository and its contents are developed and maintained by **Babin Bid** (
 
 The materials, configuration steps, and documentation provided herein are intended strictly for educational, experimental, and academic research purposes.
 
-Licensed under the [MIT License](LICENSE).
+✨ Licensed under the [MIT License](LICENSE).
 
 ---
 
