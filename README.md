@@ -23,7 +23,7 @@
 
 <div align="center">
 
-## 📌 Student & Academic Details
+## 🧑‍💻 Student & Academic Details 🧑‍💻
 
 | Attribute | Details |
 | :---: | :---: |
@@ -41,7 +41,7 @@
 
 <div align="center">
 
-## 🔬 Laboratory Experiments
+## 🖥️ Laboratory Experiments 🖥️
 
 | # | Experiment Title | Key Tools & Tech | Documentation Report |
 | :---: | :--- | :--- | :---: |
