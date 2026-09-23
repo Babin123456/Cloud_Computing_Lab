@@ -2,7 +2,7 @@
 
 <div align="center">
 
-# Cloud Computing Laboratory (CSE12045)
+# 💻 Cloud Computing Laboratory (CSE12045) 💻
 
 ![Cloud Computing Lab Header](https://capsule-render.vercel.app/api?type=waving&color=0:090d16,35:0284c7,70:6366f1,100:090d16&height=200&section=header&text=CLOUD%20COMPUTING%20LAB&fontSize=38&fontColor=ffffff&fontAlignY=36&desc=(CSE12045)%20%E2%80%A2%207th%20Semester&descAlignY=58)
 
