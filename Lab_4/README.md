@@ -1,3 +1,5 @@
+<!-- markdownlint-disable -->
+
 # Cloud Computing Lab 4
 
 ## Software-Defined Networking (SDN) --- Complete Installation & Experiment Guide
@@ -681,24 +683,3 @@ and a traffic-filtering rule is added to demonstrate packet dropping.
 
 **Result:** The SDN environment is successfully created, and basic
 forwarding and traffic-filtering operations are demonstrated.
-
-------------------------------------------------------------------------
-
-### Experiment Completion Checklist
-
--   [ ] Ubuntu updated and system packages installed.
--   [ ] Open vSwitch service checked.
--   [ ] Mininet installation verified.
--   [ ] `uv` installed and Python 3.9 installed.
--   [ ] Ryu virtual environment created.
--   [ ] Ryu 4.34 and runtime dependencies installed.
--   [ ] Ryu version and OpenFlow application verified.
--   [ ] Ryu controller started.
--   [ ] Three-host Mininet topology created.
--   [ ] Nodes and connections inspected.
--   [ ] `pingall` and H1-to-H2 connectivity tested.
--   [ ] OpenFlow flow entries inspected.
--   [ ] Traffic-filtering rule added and tested.
--   [ ] Flow entries deleted and Mininet cleaned up.
-
-**End of Lab 4 --- Software-Defined Networking (SDN)**

@@ -1,4 +1,4 @@
-<!-- markdownlint-disable MD033 MD041 -->
+<!-- markdownlint-disable -->
 
 <div align="center">
 
@@ -15,6 +15,8 @@
 [![Hypervisor](https://img.shields.io/badge/Hypervisor-Oracle%20VirtualBox-2563eb?style=flat-square&logo=virtualbox&logoColor=white)](https://www.virtualbox.org/)
 [![OS](https://img.shields.io/badge/Guest%20OS-Ubuntu%20Linux-E95420?style=flat-square&logo=ubuntu&logoColor=white)](https://ubuntu.com/)
 [![SDN](https://img.shields.io/badge/Emulation-Mininet%202.3.0-14b8a6?style=flat-square&logo=gnubash&logoColor=white)](http://mininet.org/)
+[![Controller](https://img.shields.io/badge/SDN%20Controller-Ryu%204.34-0284c7?style=flat-square&logo=python&logoColor=white)](https://ryu-sdn.org/)
+[![OpenFlow](https://img.shields.io/badge/Protocol-OpenFlow%201.3-6366f1?style=flat-square)](https://opennetworking.org/)
 [![License](https://img.shields.io/badge/License-MIT-22c55e?style=flat-square)](LICENSE)
 
 </div>
@@ -48,6 +50,7 @@
 | **01** | **Installation of Hypervisors and Initiation of VMs** | VirtualBox, Ubuntu ISO (`ubuntu-server`), GCC, Kernel Headers | [Experiment_1.pdf](Experiment_1.pdf) |
 | **02** | **Creation and Network Configuration of Virtual Machines** | VirtualBox Full Clone, NAT Network (`Dummy`), ICMP Ping | [Experiment_2.pdf](Experiment_2.pdf) |
 | **03** | **Installation and Basic Operation of Mininet** | Ubuntu VM, Mininet 2.3.0, Open vSwitch, Single & Tree Topologies | [Experiment_3.pdf](Experiment_3.pdf) |
+| **04** | **Software-Defined Networking (SDN) with Ryu Controller & Mininet** | Mininet, Open vSwitch (OVS), Ryu 4.34, OpenFlow 1.3, `uv`, Python 3.9 | [Experiment_4.pdf](Experiment_4.pdf) • [Lab 4 README](Lab_4/README.md) |
 
 </div>
 
@@ -143,6 +146,78 @@
   ```
 
 - **Report & Output:** Verified Mininet 2.3.0 with complete reachability (0% packet drop) across single and depth-3 tree SDN topologies. Complete command outputs are documented in [Experiment_3.pdf](Experiment_3.pdf).
+
+---
+
+## ⚡ Experiment 4: Software-Defined Networking (SDN) with Ryu Controller & Mininet
+
+- **Objective:** Configure an end-to-end Software-Defined Networking (SDN) environment separating the control plane and data plane by interfacing **Mininet** and **Open vSwitch (OVS)** with an external **Ryu SDN Controller** (`simple_switch_13`) running over **OpenFlow 1.3**. Verify full mesh connectivity (`pingall`), inspect flow entries, and demonstrate programmable traffic engineering via custom flow filtering rules.
+- **Architecture & System Stack:**
+  - **SDN Controller:** Ryu 4.34 (running in an isolated Python 3.9 virtual environment via `uv`) listening on TCP port `6653`
+  - **Programmable Switch:** Open vSwitch (OVS) `s1` communicating via OpenFlow 1.3 (`--switch ovsk,protocols=OpenFlow13`)
+  - **Network Topology:** Single switch topology with 3 virtual hosts (`h1`, `h2`, `h3`)
+  - **Traffic Filtering:** Custom flow table rule installed via `ovs-ofctl` matching ingress port 1 (`in_port=1`) with an action to drop packets (`actions=drop`)
+- **Topology Schematic:**
+
+  ```text
+                   +----------------------------------+
+                   |          Ryu Controller          |
+                   |   (ryu.app.simple_switch_13)     |
+                   |       TCP Port: 6653             |
+                   +----------------+-----------------+
+                                    | OpenFlow 1.3
+                   +----------------+-----------------+
+                   |        Open vSwitch (s1)         |
+                   +--------+---------------+---------+
+                            |               |         |
+                           (h1)            (h2)      (h3)
+  ```
+
+- **Running Commands & Syntaxes:**
+
+  ```bash
+  # ==========================================
+  # Terminal 1: Start Ryu SDN Controller
+  # ==========================================
+  # Step 1: Activate Python 3.9 isolated venv
+  source ~/ryu-env39/bin/activate
+
+  # Step 2: Launch Ryu controller with OpenFlow 1.3 learning-switch application
+  ryu-manager --ofp-tcp-listen-port 6653 ryu.app.simple_switch_13
+
+  # ==========================================
+  # Terminal 2: Instantiate Mininet Topology
+  # ==========================================
+  # Step 3: Start 3-host single-switch topology attached to remote Ryu controller
+  sudo mn --topo single,3 \
+      --controller=remote,ip=127.0.0.1,port=6653 \
+      --switch ovsk,protocols=OpenFlow13
+
+  # Inside Mininet CLI:
+  mininet> nodes
+  mininet> net
+  mininet> pingall          # Initial baseline: 0% dropped (6/6 received)
+  mininet> h1 ping h2       # Test live ICMP echo between h1 and h2
+
+  # ==========================================
+  # Terminal 3: Flow Inspection & Rule Injection
+  # ==========================================
+  # Step 4: Dump active OpenFlow 1.3 rules on switch s1
+  sudo ovs-ofctl -O OpenFlow13 dump-flows s1
+
+  # Step 5: Inject drop rule blocking all egress traffic from h1 (switch port 1)
+  sudo ovs-ofctl -O OpenFlow13 add-flow s1 "priority=100,in_port=1,actions=drop"
+
+  # Retest in Mininet CLI:
+  # mininet> h1 ping h2   --> Verified packet loss / blocked traffic
+
+  # Step 6: Flush flow entries and clean up network emulator
+  sudo ovs-ofctl -O OpenFlow13 del-flows s1
+  mininet> exit
+  sudo mn -c
+  ```
+
+- **Report & Output:** Successfully set up the decoupled control plane using Ryu 4.34 and data plane using Open vSwitch. Verified OpenFlow 1.3 packet handling and active traffic filtering. Detailed installation workarounds, environment setups, and terminal logs are documented in [Experiment_4.pdf](Experiment_4.pdf) and [Lab 4 README](Lab_4/README.md).
 
 ---
 
