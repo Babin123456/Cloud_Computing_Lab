@@ -127,24 +127,62 @@ Do not enter Mininet commands in the ordinary Ubuntu shell.
 
 ### Step 5.1 --- Update Ubuntu
 
+Run package list update first:
+
 ``` bash
 sudo apt update
+```
+
+Then upgrade existing packages:
+
+``` bash
 sudo apt upgrade -y
 ```
 
 ### Step 5.2 --- Install required packages
 
+You can install the required packages individually or in single-line statements:
+
 ``` bash
-sudo apt install -y \
-    git \
-    curl \
-    ca-certificates \
-    build-essential \
-    mininet \
-    openvswitch-switch \
-    python3 \
-    python3-pip \
-    python3-venv
+sudo apt install -y git
+```
+
+``` bash
+sudo apt install -y curl
+```
+
+``` bash
+sudo apt install -y ca-certificates
+```
+
+``` bash
+sudo apt install -y build-essential
+```
+
+``` bash
+sudo apt install -y mininet
+```
+
+``` bash
+sudo apt install -y openvswitch-switch
+```
+
+``` bash
+sudo apt install -y python3
+```
+
+``` bash
+sudo apt install -y python3-pip
+```
+
+``` bash
+sudo apt install -y python3-venv
+```
+
+*(Alternatively, all in a single line without line continuations)*:
+
+``` bash
+sudo apt install -y git curl ca-certificates build-essential mininet openvswitch-switch python3 python3-pip python3-venv
 ```
 
 These packages provide Git, download utilities, build tools, Mininet,
@@ -275,11 +313,10 @@ and avoids the build-hook issue encountered with newer packaging tools.
 
 ### Step 8.2 --- Install Ryu from the Faucet-maintained repository
 
+Execute the single-line command:
+
 ``` bash
-uv pip install --python ~/ryu-env39/bin/python \
-    --no-build-isolation \
-    --no-deps \
-    "git+https://github.com/faucetsdn/ryu.git@v4.34"
+uv pip install --python ~/ryu-env39/bin/python --no-build-isolation --no-deps "git+https://github.com/faucetsdn/ryu.git@v4.34"
 ```
 
 This retrieves the `v4.34` source using Git and installs it into the
@@ -288,19 +325,48 @@ Python 3.9 environment.
 ### Step 8.3 --- Install runtime dependencies
 
 Because the Ryu installation above uses `--no-deps`, install the runtime
-packages separately:
+packages individually or in a single line:
 
 ``` bash
-uv pip install --python ~/ryu-env39/bin/python \
-    eventlet \
-    msgpack \
-    netaddr \
-    oslo.config \
-    ovs \
-    routes \
-    six \
-    tinyrpc \
-    webob
+uv pip install --python ~/ryu-env39/bin/python eventlet
+```
+
+``` bash
+uv pip install --python ~/ryu-env39/bin/python msgpack
+```
+
+``` bash
+uv pip install --python ~/ryu-env39/bin/python netaddr
+```
+
+``` bash
+uv pip install --python ~/ryu-env39/bin/python oslo.config
+```
+
+``` bash
+uv pip install --python ~/ryu-env39/bin/python ovs
+```
+
+``` bash
+uv pip install --python ~/ryu-env39/bin/python routes
+```
+
+``` bash
+uv pip install --python ~/ryu-env39/bin/python six
+```
+
+``` bash
+uv pip install --python ~/ryu-env39/bin/python tinyrpc
+```
+
+``` bash
+uv pip install --python ~/ryu-env39/bin/python webob
+```
+
+*(Alternatively, all runtime dependencies together in one single line)*:
+
+``` bash
+uv pip install --python ~/ryu-env39/bin/python eventlet msgpack netaddr oslo.config ovs routes six tinyrpc webob
 ```
 
 ------------------------------------------------------------------------
@@ -324,8 +390,7 @@ ryu-manager 4.34
 ### Step 9.2 --- Verify the OpenFlow 1.3 application
 
 ``` bash
-~/ryu-env39/bin/python -c \
-"import ryu.app.simple_switch_13; print('OpenFlow 1.3 application OK')"
+~/ryu-env39/bin/python -c "import ryu.app.simple_switch_13; print('OpenFlow 1.3 application OK')"
 ```
 
 Expected:
@@ -362,12 +427,10 @@ Mininet connects to it.
 
 ### Step 10.2 --- Start the Mininet topology (Terminal 2)
 
-Open a second Ubuntu terminal. Run:
+Open a second Ubuntu terminal. Run this on a single line:
 
 ``` bash
-sudo mn --topo single,3 \
-    --controller=remote,ip=127.0.0.1,port=6653 \
-    --switch ovsk,protocols=OpenFlow13
+sudo mn --topo single,3 --controller=remote,ip=127.0.0.1,port=6653 --switch ovsk,protocols=OpenFlow13
 ```
 
 This creates one switch connected to three hosts and configures a remote
@@ -454,9 +517,10 @@ below assumes that mapping.
 
 ### Step 12.2 --- Add the drop rule (Terminal 3)
 
+Run the rule addition command on a single line:
+
 ``` bash
-sudo ovs-ofctl -O OpenFlow13 add-flow s1 \
-"priority=100,in_port=1,actions=drop"
+sudo ovs-ofctl -O OpenFlow13 add-flow s1 "priority=100,in_port=1,actions=drop"
 ```
 
 **Meaning of the rule:**
@@ -588,88 +652,147 @@ sudo mn -c
 
 ## 15. Quick Command Reference
 
-### Installation commands
+### Step 15.1 --- System Preparation & Tooling (Terminal 1)
+
+Execute each command one by one:
 
 ``` bash
-# Update Ubuntu
 sudo apt update
-sudo apt upgrade -y
-
-# Install system packages
-sudo apt install -y git curl ca-certificates build-essential \
-    mininet openvswitch-switch python3 python3-pip python3-venv
-
-# Enable Open vSwitch
-sudo systemctl enable --now openvswitch-switch
-
-# Install uv
-curl -LsSf https://astral.sh/uv/install.sh | sh
-source "$HOME/.local/bin/env"
-
-# Install Python 3.9
-uv python install 3.9
-
-# Create and activate the environment
-uv venv --python 3.9 ~/ryu-env39
-source ~/ryu-env39/bin/activate
-
-# Install build tools
-uv pip install --python ~/ryu-env39/bin/python setuptools==57.5.0 wheel
-
-# Install Ryu 4.34
-uv pip install --python ~/ryu-env39/bin/python \
-    --no-build-isolation --no-deps \
-    "git+https://github.com/faucetsdn/ryu.git@v4.34"
-
-# Install runtime dependencies
-uv pip install --python ~/ryu-env39/bin/python \
-    eventlet msgpack netaddr oslo.config ovs routes six tinyrpc webob
-
-# Verify
-~/ryu-env39/bin/ryu-manager --version
-~/ryu-env39/bin/python -c \
-"import ryu.app.simple_switch_13; print('OpenFlow 1.3 application OK')"
 ```
-
-### Experiment commands
 
 ``` bash
-# Terminal 1: Start Ryu
-source ~/ryu-env39/bin/activate
-ryu-manager --ofp-tcp-listen-port 6653 ryu.app.simple_switch_13
-
-# Terminal 2: Start Mininet
-sudo mn --topo single,3 \
-    --controller=remote,ip=127.0.0.1,port=6653 \
-    --switch ovsk,protocols=OpenFlow13
+sudo apt upgrade -y
 ```
 
-Inside Mininet:
+``` bash
+sudo apt install -y git curl ca-certificates build-essential mininet openvswitch-switch python3 python3-pip python3-venv
+```
+
+``` bash
+sudo systemctl enable --now openvswitch-switch
+```
+
+``` bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+``` bash
+source "$HOME/.local/bin/env"
+```
+
+``` bash
+uv python install 3.9
+```
+
+``` bash
+uv venv --python 3.9 ~/ryu-env39
+```
+
+``` bash
+source ~/ryu-env39/bin/activate
+```
+
+``` bash
+uv pip install --python ~/ryu-env39/bin/python setuptools==57.5.0 wheel
+```
+
+``` bash
+uv pip install --python ~/ryu-env39/bin/python --no-build-isolation --no-deps "git+https://github.com/faucetsdn/ryu.git@v4.34"
+```
+
+``` bash
+uv pip install --python ~/ryu-env39/bin/python eventlet msgpack netaddr oslo.config ovs routes six tinyrpc webob
+```
+
+``` bash
+~/ryu-env39/bin/ryu-manager --version
+```
+
+``` bash
+~/ryu-env39/bin/python -c "import ryu.app.simple_switch_13; print('OpenFlow 1.3 application OK')"
+```
+
+---
+
+### Step 15.2 --- Experiment Execution (Across Terminals)
+
+#### Terminal 1: Launch Ryu Controller
+
+``` bash
+source ~/ryu-env39/bin/activate
+```
+
+``` bash
+ryu-manager --ofp-tcp-listen-port 6653 ryu.app.simple_switch_13
+```
+
+*(Keep Terminal 1 running)*
+
+#### Terminal 2: Launch Mininet CLI
+
+``` bash
+sudo mn --topo single,3 --controller=remote,ip=127.0.0.1,port=6653 --switch ovsk,protocols=OpenFlow13
+```
+
+Inside the `mininet>` prompt, execute one by one:
 
 ``` text
 nodes
+```
+
+``` text
 net
+```
+
+``` text
 pingall
+```
+
+``` text
 h1 ping h2
+```
+
+*(Press `Ctrl + C` in Terminal 2 after verifying ping replies)*
+
+#### Terminal 3: Inspect OpenFlow & Flow Rule Injection
+
+Open Terminal 3:
+
+``` bash
+sudo ovs-ofctl -O OpenFlow13 dump-flows s1
+```
+
+``` bash
+sudo ovs-ofctl -O OpenFlow13 add-flow s1 "priority=100,in_port=1,actions=drop"
+```
+
+Back in **Terminal 2 (Mininet CLI)**, test that packets from `h1` are dropped:
+
+``` text
+h1 ping h2
+```
+
+*(Notice 100% packet drop; press `Ctrl + C`)*
+
+In **Terminal 3**, delete the rules:
+
+``` bash
+sudo ovs-ofctl -O OpenFlow13 del-flows s1
+```
+
+In **Terminal 2 (Mininet CLI)**, exit:
+
+``` text
 exit
 ```
 
-Terminal 3:
+In **Terminal 2 (Ubuntu Shell)**, clean up Mininet:
 
 ``` bash
-# Inspect flows
-sudo ovs-ofctl -O OpenFlow13 dump-flows s1
-
-# Add filtering rule (assuming H1 is on port 1)
-sudo ovs-ofctl -O OpenFlow13 add-flow s1 \
-"priority=100,in_port=1,actions=drop"
-
-# Delete all flow entries
-sudo ovs-ofctl -O OpenFlow13 del-flows s1
-
-# Clean up
 sudo mn -c
 ```
+
+Now you can stop the Ryu controller in **Terminal 1** by pressing `Ctrl + C`.
 
 ------------------------------------------------------------------------
 
