@@ -11,15 +11,7 @@
 [![Course](https://img.shields.io/badge/Course-CSE12045-0284c7?style=flat-square&logo=googlecloud&logoColor=white)](https://adamasuniversity.ac.in/)
 [![Semester](https://img.shields.io/badge/Semester-7th%20Sem-8b5cf6?style=flat-square)](https://adamasuniversity.ac.in/)
 [![University](https://img.shields.io/badge/University-ADAMAS%20University-f97316?style=flat-square)](https://adamasuniversity.ac.in/)
-[![Stream](https://img.shields.io/badge/Stream-B.Tech%20CSE%20(Core)-10b981?style=flat-square)](https://adamasuniversity.ac.in/)
-[![Hypervisor](https://img.shields.io/badge/Hypervisor-Oracle%20VirtualBox-183A61?style=flat-square&logo=virtualbox&logoColor=white)](https://www.virtualbox.org/)
-[![OS](https://img.shields.io/badge/Guest%20OS-Ubuntu%20Linux-E95420?style=flat-square&logo=ubuntu&logoColor=white)](https://ubuntu.com/)
-[![AWS](https://img.shields.io/badge/Cloud-Amazon%20Web%20Services-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white)](https://aws.amazon.com/)
-[![GCP](https://img.shields.io/badge/PaaS-Google%20App%20Engine-4285F4?style=flat-square&logo=googleappengine&logoColor=white)](https://cloud.google.com/appengine)
-[![Workspace](https://img.shields.io/badge/SaaS-Google%20Workspace-EA4335?style=flat-square&logo=google&logoColor=white)](https://workspace.google.com/)
-[![Java](https://img.shields.io/badge/Simulation-CloudSim%20%7C%20Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://openjdk.org/)
-[![Python](https://img.shields.io/badge/Dev-Python%20%7C%20Flask-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
-[![Hadoop](https://img.shields.io/badge/Big%20Data-Apache%20Hadoop-66CCFF?style=flat-square&logo=apachehadoop&logoColor=black)](https://hadoop.apache.org/)
+[![Stream](https://img.shields.io/badge/Stream-B.Tech%20CSE-10b981?style=flat-square)](https://adamasuniversity.ac.in/)
 [![License](https://img.shields.io/badge/License-MIT-22c55e?style=flat-square)](LICENSE)
 
 </div>
