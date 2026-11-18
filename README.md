@@ -12,9 +12,14 @@
 [![Semester](https://img.shields.io/badge/Semester-7th%20Sem-8b5cf6?style=flat-square)](https://adamasuniversity.ac.in/)
 [![University](https://img.shields.io/badge/University-ADAMAS%20University-f97316?style=flat-square)](https://adamasuniversity.ac.in/)
 [![Stream](https://img.shields.io/badge/Stream-B.Tech%20CSE%20(Core)-10b981?style=flat-square)](https://adamasuniversity.ac.in/)
-[![Hypervisor](https://img.shields.io/badge/Hypervisor-Oracle%20VirtualBox-2563eb?style=flat-square&logo=virtualbox&logoColor=white)](https://www.virtualbox.org/)
+[![Hypervisor](https://img.shields.io/badge/Hypervisor-Oracle%20VirtualBox-183A61?style=flat-square&logo=virtualbox&logoColor=white)](https://www.virtualbox.org/)
 [![OS](https://img.shields.io/badge/Guest%20OS-Ubuntu%20Linux-E95420?style=flat-square&logo=ubuntu&logoColor=white)](https://ubuntu.com/)
-[![Cloud](https://img.shields.io/badge/Cloud%20Platform-AWS%20%7C%20Google%20Workspace-FF9900?style=flat-square&logo=amazonwebservices&logoColor=white)](https://aws.amazon.com/)
+[![AWS](https://img.shields.io/badge/Cloud-Amazon%20Web%20Services-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white)](https://aws.amazon.com/)
+[![GCP](https://img.shields.io/badge/PaaS-Google%20App%20Engine-4285F4?style=flat-square&logo=googleappengine&logoColor=white)](https://cloud.google.com/appengine)
+[![Workspace](https://img.shields.io/badge/SaaS-Google%20Workspace-EA4335?style=flat-square&logo=google&logoColor=white)](https://workspace.google.com/)
+[![Java](https://img.shields.io/badge/Simulation-CloudSim%20%7C%20Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://openjdk.org/)
+[![Python](https://img.shields.io/badge/Dev-Python%20%7C%20Flask-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+[![Hadoop](https://img.shields.io/badge/Big%20Data-Apache%20Hadoop-66CCFF?style=flat-square&logo=apachehadoop&logoColor=black)](https://hadoop.apache.org/)
 [![License](https://img.shields.io/badge/License-MIT-22c55e?style=flat-square)](LICENSE)
 
 </div>
@@ -34,6 +39,25 @@
 | 📖 **Course Code & Title** | **Cloud Computing Lab (`CSE12045`)** • **7th Semester** |
 | 👩‍🏫 **Course Instructor** | **Prof. Anusuya Bera Ma'am** (Dept. of CSE) |
 | 🏛️ **Institution** | **ADAMAS University**, Kolkata |
+
+</div>
+
+---
+
+<div align="center">
+
+## 🛠️ Official Verified Technology Stack 🛠️
+
+| Category | Primary Technologies & Frameworks | Official Verified Badges |
+| :--- | :--- | :--- |
+| **Virtualization & OS** | Oracle VirtualBox, Ubuntu Linux Server/Desktop, Linux Terminal | <img src="https://img.shields.io/badge/Oracle%20VirtualBox-183A61?style=for-the-badge&logo=virtualbox&logoColor=white" height="26"/> <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" height="26"/> <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" height="26"/> <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white" height="26"/> |
+| **Networking & SDN** | Mininet Network Emulator, Open vSwitch, Ryu SDN Controller, OpenFlow | <img src="https://img.shields.io/badge/Mininet-14B8A6?style=for-the-badge&logo=diagram-next&logoColor=white" height="26"/> <img src="https://img.shields.io/badge/Open%20vSwitch-244E6A?style=for-the-badge&logo=switch&logoColor=white" height="26"/> <img src="https://img.shields.io/badge/Ryu%20SDN-0284C7?style=for-the-badge&logo=python&logoColor=white" height="26"/> <img src="https://img.shields.io/badge/OpenFlow%201.3-6366F1?style=for-the-badge&logoColor=white" height="26"/> |
+| **Cloud Simulation** | CloudSim Plus Toolkit, Java OpenJDK, Apache Maven | <img src="https://img.shields.io/badge/CloudSim%20Plus-0284C7?style=for-the-badge&logo=cloudsmith&logoColor=white" height="26"/> <img src="https://img.shields.io/badge/Java%2017-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" height="26"/> <img src="https://img.shields.io/badge/Apache%20Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white" height="26"/> |
+| **Public Cloud (IaaS)** | Amazon Web Services (S3, EC2, IAM, VPC, CloudWatch), AWS CLI | <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white" height="26"/> <img src="https://img.shields.io/badge/Amazon%20S3-569A31?style=for-the-badge&logo=amazons3&logoColor=white" height="26"/> <img src="https://img.shields.io/badge/Amazon%20EC2-FF9900?style=for-the-badge&logo=amazonec2&logoColor=white" height="26"/> <img src="https://img.shields.io/badge/Amazon%20VPC-8C4FFF?style=for-the-badge&logo=amazonwebservices&logoColor=white" height="26"/> <img src="https://img.shields.io/badge/CloudWatch-FF4F8B?style=for-the-badge&logo=amazoncloudwatch&logoColor=white" height="26"/> <img src="https://img.shields.io/badge/AWS%20CLI-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white" height="26"/> |
+| **Public Cloud (PaaS)** | Google App Engine, Google Cloud Platform, Cloud Shell SDK | <img src="https://img.shields.io/badge/Google%20App%20Engine-4285F4?style=for-the-badge&logo=googleappengine&logoColor=white" height="26"/> <img src="https://img.shields.io/badge/Google%20Cloud-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white" height="26"/> <img src="https://img.shields.io/badge/Cloud%20Shell-FBBC04?style=for-the-badge&logo=googlecloud&logoColor=black" height="26"/> |
+| **Collaborative Cloud (SaaS)** | Google Drive, Google Docs, Google Sheets, Google Slides | <img src="https://img.shields.io/badge/Google%20Workspace-4285F4?style=for-the-badge&logo=google&logoColor=white" height="26"/> <img src="https://img.shields.io/badge/Google%20Drive-34A853?style=for-the-badge&logo=googledrive&logoColor=white" height="26"/> <img src="https://img.shields.io/badge/Google%20Docs-4285F4?style=for-the-badge&logo=googledocs&logoColor=white" height="26"/> <img src="https://img.shields.io/badge/Google%20Sheets-0F9D58?style=for-the-badge&logo=googlesheets&logoColor=white" height="26"/> <img src="https://img.shields.io/badge/Google%20Slides-FBBC04?style=for-the-badge&logo=googleslides&logoColor=white" height="26"/> |
+| **Web & App Runtime** | Python 3, Flask Micro-Framework, Gunicorn WSGI, uv Package Tool | <img src="https://img.shields.io/badge/Python%203.12-3776AB?style=for-the-badge&logo=python&logoColor=white" height="26"/> <img src="https://img.shields.io/badge/Flask%203.1-000000?style=for-the-badge&logo=flask&logoColor=white" height="26"/> <img src="https://img.shields.io/badge/Gunicorn%2027.0-499848?style=for-the-badge&logo=gunicorn&logoColor=white" height="26"/> <img src="https://img.shields.io/badge/uv-DE5FE9?style=for-the-badge&logo=astral&logoColor=white" height="26"/> |
+| **Big Data & Distributed Computing** | Apache Hadoop, Hadoop Distributed File System (HDFS), YARN, MapReduce | <img src="https://img.shields.io/badge/Apache%20Hadoop%203.5-66CCFF?style=for-the-badge&logo=apachehadoop&logoColor=black" height="26"/> <img src="https://img.shields.io/badge/HDFS-0284C7?style=for-the-badge&logo=apachehadoop&logoColor=white" height="26"/> <img src="https://img.shields.io/badge/Apache%20YARN-E95420?style=for-the-badge&logo=apache&logoColor=white" height="26"/> <img src="https://img.shields.io/badge/MapReduce-F97316?style=for-the-badge&logo=apachehadoop&logoColor=white" height="26"/> |
 
 </div>
 
