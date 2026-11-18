@@ -30,9 +30,13 @@
 
 ---
 
+<div align="center">
+
 ## 📚 Curriculum Experiments & Documentation Index
 
 Each laboratory experiment directory contains a dedicated interactive guide along with its formal academic PDF report including verified terminal traces and system screenshots:
+
+</div>
 
 | Exp # | Experiment Title | Core Cloud Domain | Dedicated Guide | PDF Report |
 | :---: | :--- | :--- | :---: | :---: |
@@ -67,7 +71,11 @@ Each laboratory experiment directory contains a dedicated interactive guide alon
 
 ---
 
+<div align="center">
+
 ## 🛠️ Technology & Infrastructure Overview
+
+</div>
 
 ```mermaid
 graph TD
@@ -102,6 +110,8 @@ graph TD
 
 ---
 
+<div align="center">
+
 ## 📜 Academic Notice & Coursework Disclaimer
 
 This repository and its laboratory documentation are developed and maintained by **Babin Bid** (Roll No: `UG/02/BTCSE/2023/114`, Reg No: `AU/2023/0009748`) for academic coursework and continuous laboratory evaluation in the **Cloud Computing Lab (CSE12045)** under the Department of Computer Science & Engineering, School of Engineering & Technology, **ADAMAS University**, supervised by **Prof. Anusuya Bera**.
@@ -109,6 +119,8 @@ This repository and its laboratory documentation are developed and maintained by
 The code, configuration scripts, and documentation provided herein are intended strictly for educational, experimental, and research purposes.
 
 ✨ Licensed under the [MIT License](LICENSE).
+
+</div>
 
 ---
 
